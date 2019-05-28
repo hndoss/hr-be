@@ -7,3 +7,6 @@ curl -X POST -H "Content-Type: application/json" -d '{"token":"<EXISTING_TOKEN>"
 
 ## Users
 hr: 8V1kDutwBaRGVu7yCj6G
+
+## Preguntas
+1. django default user rest.

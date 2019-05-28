@@ -126,7 +126,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CORS_ORIGIN_WHITELIST = (
-    'localhost:3000/'
+    'localhost:4200/'
 )
 
 REST_FRAMEWORK = {
@@ -137,7 +137,9 @@ REST_FRAMEWORK = {
     ],
     
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+        'rest_framework.permissions.IsAuthenticated',
+        'authenticator.permissions.BasePermission'
     ],      
 }
 

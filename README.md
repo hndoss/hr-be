@@ -17,7 +17,7 @@ pip install djangorestframework
 ## Admin Requirements
 - [x] CRUD support for system users and roles.
 - [] Administrar la información general de la compañía, entre la información General de la empresa tenemos: Nombre empresa, Misión, Visión, Objetivos, Políticas, ubicación Geográfica (latitud y longitud mostrada en Google Earth), teléfonos de contacto, correo electrónico,  dirección física.
-- [] CRUD support for managements, departments and areas of the company (what are areas of the company?).
+- [x] CRUD support for managements, departments and areas of the company (what are areas of the company?).
 - [] Administración de puestos de cada una de las áreas
 - [] Support export/import general data of the company and its employees.
 - [] System log management.

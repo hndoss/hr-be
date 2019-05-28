@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Employee } from 'src/app/core/models/employee/employee';
 
 @Component({
-  selector: 'app-list-employees',
+  selector: 'hr-list-employees',
   templateUrl: './list-employees.component.html',
   styleUrls: ['./list-employees.component.css']
 })
