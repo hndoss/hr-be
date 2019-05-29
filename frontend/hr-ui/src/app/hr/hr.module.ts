@@ -5,11 +5,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { ListEmployeesComponent } from './components/list-employees/list-employees.component';
 import { CoreModule } from '../core/core.module';
 
-import { AuthGuardService } from '../core/services/auth/auth-guard.service';
-
 const routes: Routes = [
-  { path: 'hr/home', component: HomeComponent, canActivate: [AuthGuardService] },
-  { path: 'hr/employees', component: ListEmployeesComponent, canActivate: [AuthGuardService] }
+  {
+    path: 'home', 
+    component: HomeComponent, 
+    children: [
+      { path: 'employees',
+        component: ListEmployeesComponent 
+      }
+    ]
+  }
 ];
 
 @NgModule({
@@ -18,9 +23,10 @@ const routes: Routes = [
     ListEmployeesComponent
   ],
   imports: [
-    RouterModule.forRoot(routes),
+    RouterModule.forChild(routes),
     CommonModule,
     CoreModule
   ]
 })
+
 export class HrModule { }

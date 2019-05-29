@@ -7,7 +7,5 @@ app_name = 'authenticator'
 urlpatterns = [
     url(r'^login', obtain_jwt_token),
     url(r'^token-refresh/', refresh_jwt_token),
-    url(r'^token-verify/', verify_jwt_token),
-    # url(r'^auth/singup/$', views.SingupView.as_view()),
-    # url(r'^auth/ui-routes/$', views.UIRouteView.as_view()),
+    url(r'^token-verify/', verify_jwt_token)
 ]
