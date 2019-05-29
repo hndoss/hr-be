@@ -8,18 +8,22 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class AuthService {
   private apiUrl = environment.apiUrl + "auth";
-  private token: string;
-  private user: any;
   
   constructor(private http: HttpClient, private jwtHelper: JwtHelperService) {  }
+
+  private getUser() {
+    return this.jwtHelper.decodeToken(localStorage.getItem('token'))
+  }
 
   public getToken(){
     return localStorage.getItem('token');
   }
   
   public hasPermission(routeRoles: Array<String>){
-    if(this.user)
-      return !!this.user.roles.find((role) => {
+    const user = this.getUser();
+
+    if(user)
+      return !!user.roles.find((role) => {
         return routeRoles.indexOf(role) > -1;
       })
 
@@ -35,10 +39,6 @@ export class AuthService {
     this.http.post<{token: string}>(`${this.apiUrl}/login`, {username, password})
       .subscribe(res => {
           localStorage.setItem('token', res.token);
-          this.token = res.token;
-          this.user = this.jwtHelper.decodeToken(this.token)
-          console.log("authenticated");
-          console.log(this.user);
       },
         error => { 
           console.log("Error", error); 

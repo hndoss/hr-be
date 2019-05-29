@@ -1,13 +1,14 @@
-<div>
-  index should have:
-  <ul>
-    <li>
-      <a routerLink="/hr/home">hr</a>
-    </li>
-    <li>
-      <a routerLink="/login">login</a>
-    </li>
-  </ul>
+<div class="sidenav">
+  <a routerLink="#admin">Admin</a>
+  <a routerLink="/hr/home">Human Resources</a>
+  <a routerLink="#manager">Manager</a>
+  <a routerLink="#chief">Chief</a>
+  <a routerLink="#analyst">Analyst</a>
+  <a href="#about">About</a>
+  <a routerLink="/login">Login</a>
 </div>
 
-<router-outlet></router-outlet>
+<div class="main">
+  content
+  <router-outlet></router-outlet>
+</div>

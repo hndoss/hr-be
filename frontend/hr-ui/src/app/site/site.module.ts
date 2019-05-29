@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LoginComponent } from './components/login/login.component';
+import { CoreModule } from '../core/core.module';
 
 const routes: Routes = [
   { 
@@ -27,7 +28,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    CoreModule
   ],
   providers: [],
 })
