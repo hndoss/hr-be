@@ -3,10 +3,8 @@ curl -X POST -H "Content-Type: application/json" -d '{"username":"admin","passwo
 ```
 
 ```
-curl -X POST -H "Content-Type: application/json" -d '{"token":"<EXISTING_TOKEN>"}' http://localhost:8000/hr```
+curl -X POST -H "Content-Type: application/json" -d '{"token":"<EXISTING_TOKEN>"}' http://localhost:8000/hr
+```
 
 ## Users
 hr: 8V1kDutwBaRGVu7yCj6G
-
-## Preguntas
-1. django default user rest.

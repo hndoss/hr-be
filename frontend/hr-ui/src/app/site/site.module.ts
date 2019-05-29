@@ -7,17 +7,22 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HrModule } from '../hr/hr.module';
 import { LoginComponent } from './components/login/login.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { AuthGuardService } from "../core/services/auth/auth-guard.service";
 
 const routes: Routes = [
   { path: '', component: IndexComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'hr/home', loadChildren: '../hr/hr.module#HrModule'}
+  { path: 'hr/home', loadChildren: '../hr/hr.module#HrModule'},
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
   declarations: [
     IndexComponent, 
-    AboutComponent, LoginComponent
+    AboutComponent, 
+    LoginComponent, 
+    PageNotFoundComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -25,6 +30,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     CommonModule,
     HrModule
-  ]
+  ],
+  providers: [AuthGuardService],
 })
+
 export class SiteModule { }

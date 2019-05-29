@@ -5,9 +5,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { ListEmployeesComponent } from './components/list-employees/list-employees.component';
 import { CoreModule } from '../core/core.module';
 
+import { AuthGuardService } from '../core/services/auth/auth-guard.service';
+
 const routes: Routes = [
-  { path: 'hr/home', component: HomeComponent },
-  { path: 'hr/employees', component: ListEmployeesComponent }
+  { path: 'hr/home', component: HomeComponent, canActivate: [AuthGuardService] },
+  { path: 'hr/employees', component: ListEmployeesComponent, canActivate: [AuthGuardService] }
 ];
 
 @NgModule({
