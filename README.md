@@ -24,7 +24,7 @@ pip install djangorestframework
 - [ ] Support dashboards with at least 5 graphics.
 ## Hr Requirements
 - [x] CRUD personal of each company area.
-- [ ] Enviar publicaciones internas a los correos de todos los empleados
+- [ ] Enviar publicaciones internas a los correos de todos los empleados.
 - [ ] Pagar la planilla a las cuentas de los empleados, para esto se deberá implementar un web service para la  conexión con Bancos
 - [ ] Generar constancias de trabajo de forma automática y enviarlas por PDF al correo del empleado solicitante
 - [ ] Generar boletas de pago y entregarlas de forma dinámica a cada uno de los correos de los empleados

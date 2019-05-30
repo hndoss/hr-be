@@ -4,7 +4,7 @@ import { ListEntitiesComponent } from './components/list-entities/list-entities.
 
 @NgModule({
   declarations: [
-    ListEntitiesComponent,
+    ListEntitiesComponent
   ],
   exports: [
     ListEntitiesComponent

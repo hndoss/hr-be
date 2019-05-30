@@ -6,7 +6,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LoginComponent } from './components/login/login.component';
+
 import { CoreModule } from '../core/core.module';
+import { ChatComponent } from './components/chat/chat.component';
 
 const routes: Routes = [
   { 
@@ -23,7 +25,8 @@ const routes: Routes = [
   declarations: [
     IndexComponent, 
     AboutComponent, 
-    LoginComponent
+    LoginComponent,
+    ChatComponent
   ],
   imports: [
     RouterModule.forChild(routes),

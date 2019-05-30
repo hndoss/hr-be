@@ -5,13 +5,14 @@ from django.dispatch import receiver
 
 
 class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    id = models.AutoField(primary_key=True)
+    user = models.OneToOneField(User, related_name='profile', on_delete=models.CASCADE)
     salary = models.FloatField(null=True, blank=True)
     position = models.ForeignKey('adm.Position', on_delete=models.CASCADE, null=True, blank=True)
     objects = models.Manager()
 
     def __str__(self):
-        return self.position
+        return self.id
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):

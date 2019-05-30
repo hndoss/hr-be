@@ -1,11 +1,9 @@
 <div class="row">
-
-  <!-- menu -->
   <div class="col-sm-2 bg-dark">
     <div class="container-fluid">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link text-light" href="/hr/employees">Employees</a>
+          <a class="nav-link text-light" routerLink="/hr/home/employees">Employees</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-light" href="#">Link</a>
@@ -20,12 +18,25 @@
     </div>
   </div>
 
-  <!-- content -->
   <div class="col-lg-6">
     should have:
     <ul>
-      <li>can CRUD employees</li>
+      <li>should list all the employees.</li>
+      <li>can update employee position.</li>
+      <li>Enviar publicaciones internas a los correos de todos los empleados.</li>
+      <li>Pagar la planilla a las cuentas de los empleados, para esto se deberá implementar un web service para la  conexión con Bancos</li>
+      <li>Generar constancias de trabajo de forma automática y enviarlas por PDF al correo del empleado solicitante</li>
+      <li>Generar boletas de pago y entregarlas de forma dinámica a cada uno de los correos de los empleados</li>
+      <li>Aprobar/Denegar vacaciones de algún empleado de la  empresa</li>
+      <li>Aprobar/Denegar algún permiso de alguno de los empleados de la empresa</li>
+      <li>Aprobar/Denegar alguna inasistencia de algún empleado</li>
+      <li>Monitoreo de llegadas tarde o salidas temprano del personal</li>
+      <li>Autorizar permisos, insistencias o vacaciones de algún empleado y previamente autorizadas por los jefes y gerentes correspondientes.</li>
+      <li>Monitorear en una aplicación Móvil y a través de un Mapa la ubicación física de la casa de cada uno de los empleados de la empresa.</li>
+      <li>Sortear premios entre empleados, como boletos, cupones etc, se deberá crear un módulo para poder crear sorteos y publicar ganadores.</li>
     </ul>
   </div>
 
 </div>
+
+<router-outlet></router-outlet>
