@@ -8,21 +8,23 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class AuthService {
   private apiUrl = environment.apiUrl + "auth";
-  
-  constructor(private http: HttpClient, private jwtHelper: JwtHelperService) {  }
+
+  constructor(
+    private http: HttpClient,
+    private jwtHelper: JwtHelperService) { }
 
   private getUser() {
     return this.jwtHelper.decodeToken(localStorage.getItem('token'))
   }
 
-  public getToken(){
+  public getToken() {
     return localStorage.getItem('token');
   }
-  
-  public hasPermission(routeRoles: Array<String>){
+
+  public hasPermission(routeRoles: Array<String>) {
     const user = this.getUser();
 
-    if(user)
+    if (user)
       return !!user.roles.find((role) => {
         return routeRoles.indexOf(role) > -1;
       })
@@ -35,13 +37,13 @@ export class AuthService {
     return !this.jwtHelper.isTokenExpired(token);
   }
 
-  public login(username:string, password:string) {
-    this.http.post<{token: string}>(`${this.apiUrl}/login`, {username, password})
+  public login(username: string, password: string) {
+    return this.http.post<{ token: string }>(`${this.apiUrl}/login`, { username, password })
       .subscribe(res => {
-          localStorage.setItem('token', res.token);
+        localStorage.setItem('token', res.token);
       },
-        error => { 
-          console.log("Error", error); 
+        error => {
+          console.log("Error", error);
         }
       );
   }

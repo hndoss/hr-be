@@ -18,13 +18,13 @@ pip install djangorestframework
 - [x] CRUD support for system users and roles.
 - [] Administrar la información general de la compañía, entre la información General de la empresa tenemos: Nombre empresa, Misión, Visión, Objetivos, Políticas, ubicación Geográfica (latitud y longitud mostrada en Google Earth), teléfonos de contacto, correo electrónico,  dirección física.
 - [x] CRUD support for managements, departments and areas of the company (what are areas of the company?).
-- [] Administración de puestos de cada una de las áreas
+- [x] CRUD of every position in the company.
 - [] Support export/import general data of the company and its employees.
-- [] System log management.
+- [x] System log management.
 - [] Support dashboards with at least 5 graphics.
 
 ## Hr Requirements
-- [] CRUD personal de cada una de las áreas(Reclutamiento y contratación)
+- [x] CRUD personal of each company area.
 - [] Enviar publicaciones internas a los correos de todos los empleados
 - [] Pagar la planilla a las cuentas de los empleados, para esto se deberá implementar un web service para la  conexión con Bancos
 - [] Generar constancias de trabajo de forma automática y enviarlas por PDF al correo del empleado solicitante

@@ -13,7 +13,8 @@ const routes: Routes = [
     path: '', 
     component: IndexComponent,
     children: [
-      { path: 'login', component: LoginComponent }
+      { path: 'login', component: LoginComponent },
+      { path: 'about', component: AboutComponent }
     ]
   }
 ];

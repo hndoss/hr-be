@@ -11,7 +11,9 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class LoginComponent implements OnInit {
   private loginForm: FormGroup
 
-  constructor(public authService: AuthService, private route: ActivatedRoute, private router: Router) { }
+  constructor(
+    private authService: AuthService
+  ) { }
 
   ngOnInit() {
     this.loginForm = this.createLoginForm()
@@ -25,6 +27,6 @@ export class LoginComponent implements OnInit {
   }
   
   private onSubmit(){
-    this.authService.login(this.loginForm.value.email, this.loginForm.value.password);
+    this.authService.login(this.loginForm.value.email, this.loginForm.value.password)
   }
 }
