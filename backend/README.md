@@ -7,4 +7,6 @@ curl -X POST -H "Content-Type: application/json" -d '{"token":"<EXISTING_TOKEN>"
 ```
 
 ## Users
-hr: 8V1kDutwBaRGVu7yCj6G
+admin:admin: asd.123
+hruser: 8V1kDutwBaRGVu7yCj6G
+normaluser: UJLX83Noyy43wCluUw3Y

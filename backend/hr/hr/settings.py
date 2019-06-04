@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
-import os
+import os, datetime
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -161,5 +161,6 @@ JWT_AUTH = {
     'JWT_ISSUER': None,
     'JWT_ALLOW_REFRESH': False,
     'JWT_AUTH_HEADER_PREFIX': 'Bearer',
-    'JWT_AUTH_COOKIE': None
+    'JWT_AUTH_COOKIE': None,
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=300000)
 }

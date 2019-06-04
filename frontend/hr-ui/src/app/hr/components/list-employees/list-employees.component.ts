@@ -10,7 +10,12 @@ import { Employee } from 'src/app/core/models/userprofile/employee';
 })
 export class ListEmployeesComponent implements OnInit {
   title = "Employees"
-  employees: Employee[];
+  subtitle = "employee name"
+  employees: any = [];
+  properties= [
+    { "name": "Id" , "value": "id" }
+  ]
+  
 
   constructor(
     private employeeService: EmployeeService, 
@@ -22,16 +27,11 @@ export class ListEmployeesComponent implements OnInit {
   }
 
   private getEmployees(){
-  //   this.employees = [];
-  //   this.employeeService.getEmployees()
-  //     .subscribe((data: {}) => {
-  //             this.employees = data;
-  //     });
+    this.employees = [];
+    this.employeeService.getEmployees()
+      .subscribe((data: {}) => {
+              this.employees = data;
+              console.log(this.employees)
+      });
   }
-
-//   <core-list-entities 
-//   *ngIf="title" 
-//   [title]="title"
-// >
-// </core-list-entities>
 }

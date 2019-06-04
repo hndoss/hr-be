@@ -1,12 +1,11 @@
-full list of employees with update and delete button.
+- full list of employees with update and delete button.
+- add a new employee
 
-<div class="list-group" *ngFor="let employee of employees">
-    <div class="d-flex w-100 justify-content-between">
-      <!-- <h5 class="mb-1">Channel Name: {{ employee.name }}</h5> -->
-      <!-- <span>Number: {{ employee.number }}</span> -->
-      <!-- <button class="btn btn-outline-dark" (click)="open(content, employee)">Edit</button> -->
-      <!-- <button class="btn btn-danger"(click)="deleteChannel(employee)">Delete</button> -->
-    </div>
-</div>
-
-add a new employee
+<core-list-entities 
+  *ngIf="title" 
+  [title]="title"
+  [subtitle]="subtitle"
+  [entities]="employees"
+  [properties]="properties"
+>
+</core-list-entities>

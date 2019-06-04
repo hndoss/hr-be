@@ -10,6 +10,7 @@ export class ListEntitiesComponent implements OnInit {
   @Input() entities: any[];
   @Input() properties: any[];
   @Input() title: string;
+  @Input() subtitle: string;
 
   constructor() { 
     if(!this.title)
