@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'core-list-entities',
@@ -12,6 +12,8 @@ export class ListEntitiesComponent implements OnInit {
   @Input() title: string;
   @Input() subtitle: string;
 
+  @Output() callForUpdate = new EventEmitter();
+  
   constructor() { 
     if(!this.title)
       this.title="Generic List"
@@ -19,4 +21,7 @@ export class ListEntitiesComponent implements OnInit {
   
   ngOnInit() { }
 
+  private clickUpdate(entity){
+    this.callForUpdate.emit(entity)
+  }
 }

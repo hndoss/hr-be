@@ -26,7 +26,7 @@ pip install djangorestframework
 - [x] CRUD personal of each company area.
 - [ ] Enviar publicaciones internas a los correos de todos los empleados.
 - [ ] Pagar la planilla a las cuentas de los empleados, para esto se deberá implementar un web service para la  conexión con Bancos
-- [ ] Generar constancias de trabajo de forma automática y enviarlas por PDF al correo del empleado solicitante
+- [ ] Generar constancias de trabajo de forma automática y enviarlas por PDF al correo del empleado solicitante.
 - [ ] Generar boletas de pago y entregarlas de forma dinámica a cada uno de los correos de los empleados
 - [ ] Aprobar/Denegar vacaciones de algún empleado de la  empresa
 - [ ] Aprobar/Denegar algún permiso de alguno de los empleados de la empresa

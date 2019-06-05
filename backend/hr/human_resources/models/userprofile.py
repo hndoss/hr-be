@@ -9,6 +9,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, related_name='profile', on_delete=models.CASCADE)
     salary = models.FloatField(null=True, blank=True)
     position = models.ForeignKey('adm.Position', on_delete=models.CASCADE, null=True, blank=True)
+    
     objects = models.Manager()
 
     def __str__(self):

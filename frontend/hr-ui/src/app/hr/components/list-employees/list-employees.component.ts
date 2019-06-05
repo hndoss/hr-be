@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeeService } from 'src/app/core/services/employee/employee.service';
-import { Employee } from 'src/app/core/models/userprofile/employee';
+import { UserProfile } from 'src/app/core/models/userprofile/userprofile';
+import { User } from 'src/app/core/models/user/user';
 
 @Component({
   selector: 'hr-list-employees',
@@ -11,27 +12,31 @@ import { Employee } from 'src/app/core/models/userprofile/employee';
 export class ListEmployeesComponent implements OnInit {
   title = "Employees"
   subtitle = "employee name"
-  employees: any = [];
-  properties= [
-    { "name": "Id" , "value": "id" }
+  employees: UserProfile[];
+  properties = [
+    { "name": "Id", "value": "id" },
+    { "name": "Username", "value": "username" }
   ]
-  
+
 
   constructor(
-    private employeeService: EmployeeService, 
-    private route: ActivatedRoute, 
+    private employeeService: EmployeeService,
+    private route: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit() {
     this.getEmployees();
   }
 
-  private getEmployees(){
+  private getEmployees() {
     this.employees = [];
     this.employeeService.getEmployees()
-      .subscribe((data: {}) => {
-              this.employees = data;
-              console.log(this.employees)
+      .subscribe((employees: UserProfile[]) => {
+        this.employees = employees;
       });
+  }
+
+  private updateEmployee(entity) {
+    console.log("Updating " + entity.user.username);
   }
 }

@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'django_filters',
     'adm',
     'authenticator',
-    'human_resources'
+    'human_resources',
 ]
 
 MIDDLEWARE = [
@@ -141,6 +142,10 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
         'authenticator.permissions.BasePermission'
     ],      
+    'DEFAULT_FILTER_BACKENDS': [
+        'rest_framework.filters.SearchFilter',
+        'django_filters.rest_framework.DjangoFilterBackend'
+    ]
 }
 
 JWT_AUTH = {
