@@ -17,37 +17,42 @@ export class EmployeeService {
   constructor(private http: HttpClient) { }
 
   public getEmployees(): Observable<UserProfile[]> {
-    return this.http.get<UserProfile[]>(this.apiUrl)
+    return this.http.get<any>(this.apiUrl)
       .pipe(
         map(res => {
-          let employees : UserProfile[];
-          employees = [];
-
+          let employees : UserProfile[] = [];
           res.forEach(object => {
             let user = new User(object.user.id, object.user.username, 
-              object.user.firstName, object.user.lastName, object.user.email);
-              
-            employees.push(new UserProfile(object.id, object.positionId, object.salary, user))
+              object.user.first_name, object.user.last_name, object.user.email);
+
+            employees.push(new UserProfile(object.id, object.positionId, object.departmentId,object.salary, user))
           });
           return employees;
         })
       );
-
   }
 
   public getEmployee(id: number): Observable<UserProfile> {
-    return this.http.get<UserProfile>(`${this.apiUrl}/${id}`)
+    return this.http.get<any>(`${this.apiUrl}/${id}`)
       .pipe(
         map(res => {
-          let user = new User(res.id, res.username, res.firstName, res.lastName, res.email);
-          let employee = new UserProfile(res.id, res.positionId, res.salary, user);
-          return employee
+
+          let user = new User(res.user.id, res.user.username, res.user.first_name, 
+            res.user.last_name, res.user.email);
+
+          let employee = new UserProfile(res.id, res.positionId, res.departmentId, res.salary, user);
+          return employee;
         })
       );
   }
 
-  private buildUser(json: any): User{
-    return new User();
+  public updateEmployee(user: UserProfile){
+    delete user.user;
+    this.http.patch(`${this.apiUrl}/${user.id}/`, JSON.stringify(user))
+      .subscribe(response  => {
+          console.log("UPDATE Request is successful ", response);
+        },
+        error  => {console.log("Error", error);}
+    );
   }
-
 }

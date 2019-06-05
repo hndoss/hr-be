@@ -8,7 +8,7 @@ class DepartmentAdmin(admin.ModelAdmin):
     list_display = ('name','description')
     
 class PositionAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description', 'department')
+    list_display = ('name', 'description')
     
 admin.site.register(Management, ManagementAdmin)
 admin.site.register(Department, DepartmentAdmin)

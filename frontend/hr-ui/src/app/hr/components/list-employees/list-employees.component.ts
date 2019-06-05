@@ -11,13 +11,12 @@ import { User } from 'src/app/core/models/user/user';
 })
 export class ListEmployeesComponent implements OnInit {
   title = "Employees"
-  subtitle = "employee name"
+  subtitle = "username"
   employees: UserProfile[];
   properties = [
     { "name": "Id", "value": "id" },
     { "name": "Username", "value": "username" }
   ]
-
 
   constructor(
     private employeeService: EmployeeService,
@@ -36,7 +35,9 @@ export class ListEmployeesComponent implements OnInit {
       });
   }
 
-  private updateEmployee(entity) {
-    console.log("Updating " + entity.user.username);
+  private showDetailsOfEmployee(entity) {
+    console.log("Updating " + entity + " and triggering modal ");
+    this.router.navigate([`${this.router.url}/${entity.id}`]);
   }
+  
 }

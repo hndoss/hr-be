@@ -9,6 +9,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, related_name='profile', on_delete=models.CASCADE)
     salary = models.FloatField(null=True, blank=True)
     position = models.ForeignKey('adm.Position', on_delete=models.CASCADE, null=True, blank=True)
+    department = models.ForeignKey('adm.Department', on_delete=models.CASCADE, null=True, blank=True)
     
     objects = models.Manager()
 
@@ -19,8 +20,3 @@ class UserProfile(models.Model):
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         UserProfile.objects.create(user=instance)
-
-
-# @receiver(post_save, sender=User)
-# def save_user_profile(sender, instance, **kwargs):
-#     instance.profile.save()

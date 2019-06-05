@@ -1,1 +1,1 @@
-from .management_serializer import *
+from .department_serializer import *

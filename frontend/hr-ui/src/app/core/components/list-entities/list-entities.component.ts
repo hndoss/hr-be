@@ -21,7 +21,7 @@ export class ListEntitiesComponent implements OnInit {
   
   ngOnInit() { }
 
-  private clickUpdate(entity){
+  private clickOnEntity(entity: any){
     this.callForUpdate.emit(entity)
   }
 }

@@ -5,5 +5,6 @@ app_name = 'human_resources'
 
 router = routers.DefaultRouter()
 router.register(r'^users', views.UserProfileView)
+router.register(r'^departments', views.DepartmentView)
 
 urlpatterns = router.urls

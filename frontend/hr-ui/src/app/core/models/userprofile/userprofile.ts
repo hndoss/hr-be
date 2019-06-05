@@ -2,80 +2,49 @@ import { User } from '../user/user';
 
 export class UserProfile {
 
-  private _id?: number;
-  private _positionId: number;
-  private _salary?: number;
-  private _user?: User;
+  public id?: number;
+  public position: number;
+  public department: number;
+  public salary?: number;
+  public user?: User;
 
-  public constructor(id: number, position: number, salary: number, user: User){
-    this._id = id;
-    this._positionId =  position;
-    this._salary = salary;
-    this._user = user;
-  }
-
-  set id(id: number) {
-    this._id = id;
-  }
-
-  get id(): number {
-    return this._id;
-  }
-
-  set positionId(positionId: number) {
-    this._positionId = positionId;
-  }
-
-  get positionId(): number {
-    return this._positionId;
-  }
-
-  set salary(salary: number) {
+  public constructor(id: number, position: number, department: number, salary: number, user: User){
+    this.id = id;
+    this.position =  position;
     this.salary = salary;
-  }
-
-  get salary(): number {
-    return this._salary;
-  }
-
-  set user(user: User) {
     this.user = user;
   }
 
-  get user(): User {
-    return this._user;
-  }
-
-  set username(username: string) {
-    this._user.username = username;
-  }
+  // set username(username: string) {
+  //   this.user.username = username;
+  // }
 
   get username(): string {
-    return this._user.username;
+    return this.user.username;
   }
 
-  set firstName(firstName: string) {
-    this._user.firstName = firstName;
+  set first_name(first_name: string) {
+    this.user.first_name = first_name;
   }
 
-  get firstName(): string {
-    return this._user.firstName;
+  get first_name(): string {
+    return this.user.first_name;
   }
 
-  set lastName(lastName: string) {
-    this._user.lastName = lastName;
+  set last_name(last_name: string) {
+    this.user.last_name = last_name;
   }
 
-  get lastName(): string {
-    return this._user.lastName;
+  get last_name(): string {
+    return this.user.last_name;
   }
 
   set email(email: string) {
-    this._user.email = email;
+    this.user.email = email;
   }
 
   get email(): string {
-    return this._user.email;
+    return this.user.email;
   }
 
 }
