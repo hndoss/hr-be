@@ -1,0 +1,9 @@
+<h1>Announcements</h1>
+
+<ckeditor 
+  [editor]="Editor"
+  (change)="onChange($event)"
+  data="Announce here!">
+</ckeditor>
+
+<button (click)="sendAnnouncement()">Send</button> 

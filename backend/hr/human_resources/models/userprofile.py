@@ -8,7 +8,7 @@ class UserProfile(models.Model):
     id = models.AutoField(primary_key=True)
     user = models.OneToOneField(User, related_name='profile', on_delete=models.CASCADE)
     salary = models.FloatField(null=True, blank=True)
-    position = models.ForeignKey('adm.Position', on_delete=models.CASCADE, null=True, blank=True)
+    job = models.ForeignKey('adm.Job', on_delete=models.CASCADE, null=True, blank=True)
     department = models.ForeignKey('adm.Department', on_delete=models.CASCADE, null=True, blank=True)
     
     objects = models.Manager()

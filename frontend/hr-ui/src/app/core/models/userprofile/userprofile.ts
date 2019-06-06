@@ -3,21 +3,22 @@ import { User } from '../user/user';
 export class UserProfile {
 
   public id?: number;
-  public position: number;
+  public job: number;
   public department: number;
   public salary?: number;
   public user?: User;
 
-  public constructor(id: number, position: number, department: number, salary: number, user: User){
+  public constructor(id: number, job: number, department: number, salary: number, user: User){
     this.id = id;
-    this.position =  position;
+    this.job =  job;
+    this.department = department;
     this.salary = salary;
     this.user = user;
   }
 
-  // set username(username: string) {
-  //   this.user.username = username;
-  // }
+  set username(username: string) {
+    this.user.username = username;
+  }
 
   get username(): string {
     return this.user.username;

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Management, Department, Position
+from .models import Management, Department, Job
 
 class ManagementAdmin(admin.ModelAdmin):
     list_display = ('name', 'description')
@@ -7,9 +7,9 @@ class ManagementAdmin(admin.ModelAdmin):
 class DepartmentAdmin(admin.ModelAdmin):
     list_display = ('name','description')
     
-class PositionAdmin(admin.ModelAdmin):
+class JobAdmin(admin.ModelAdmin):
     list_display = ('name', 'description')
     
 admin.site.register(Management, ManagementAdmin)
 admin.site.register(Department, DepartmentAdmin)
-admin.site.register(Position, PositionAdmin)
+admin.site.register(Job, JobAdmin)

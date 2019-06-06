@@ -1,3 +1,3 @@
 from .management import *
 from .department import *
-from .position import *
+from .job import *

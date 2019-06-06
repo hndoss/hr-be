@@ -18,10 +18,11 @@ pip install djangorestframework
 - [x] CRUD support for system users and roles.
 - [ ] Can edit company information at about section.
 - [x] CRUD support for managements, departments and areas of the company (what are areas of the company?).
-- [x] CRUD of every position in the company.
+- [x] CRUD of every  in the company.
 - [ ] Support export/import general data of the company and its employees.
 - [x] System log management.
 - [ ] Support dashboards with at least 5 graphics.
+
 ## Hr Requirements
 - [x] CRUD personal of each company area.
 - [ ] Enviar publicaciones internas a los correos de todos los empleados.

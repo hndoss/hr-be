@@ -20,12 +20,12 @@ export class EmployeeService {
     return this.http.get<any>(this.apiUrl)
       .pipe(
         map(res => {
-          let employees : UserProfile[] = [];
+          let employees: UserProfile[] = [];
           res.forEach(object => {
-            let user = new User(object.user.id, object.user.username, 
+            let user = new User(object.user.id, object.user.username,
               object.user.first_name, object.user.last_name, object.user.email);
 
-            employees.push(new UserProfile(object.id, object.positionId, object.departmentId,object.salary, user))
+            employees.push(new UserProfile(object.id, object.job, object.department, object.salary, user))
           });
           return employees;
         })
@@ -37,22 +37,24 @@ export class EmployeeService {
       .pipe(
         map(res => {
 
-          let user = new User(res.user.id, res.user.username, res.user.first_name, 
+          let user = new User(res.user.id, res.user.username, res.user.first_name,
             res.user.last_name, res.user.email);
 
-          let employee = new UserProfile(res.id, res.positionId, res.departmentId, res.salary, user);
+          let employee = new UserProfile(res.id, res.job, res.department, res.salary, user);
+
           return employee;
         })
       );
   }
 
-  public updateEmployee(user: UserProfile){
-    delete user.user;
-    this.http.patch(`${this.apiUrl}/${user.id}/`, JSON.stringify(user))
-      .subscribe(response  => {
-          console.log("UPDATE Request is successful ", response);
-        },
-        error  => {console.log("Error", error);}
-    );
+  public updateEmployee(user: UserProfile) {
+    let userCopy = Object.assign({}, user);
+    delete userCopy.user;
+    this.http.patch(`${this.apiUrl}/${user.id}/`, JSON.stringify(userCopy))
+      .subscribe(response => {
+        console.log("UPDATE Request is successful ", response);
+      },
+        error => { console.log("Error", error); }
+      );
   }
 }

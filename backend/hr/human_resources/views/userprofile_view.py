@@ -6,8 +6,8 @@ from ..models import UserProfile
 class UserProfileView(viewsets.ModelViewSet): 
     serializer_class = UserProfileSerializer
     queryset = UserProfile.objects.all()
-    # filter_fields = ('department', 'position',)
-    filter_fields = ('position',)
+    # filter_fields = ('department', 'job',)
+    filter_fields = ('job',)
     allowed_groups = ['hr', 'manager',]
 
     # def get_queryset(self):
@@ -21,4 +21,4 @@ class UserProfileView(viewsets.ModelViewSet):
     
 #     allowed_groups = ['hr']
 
-# ?department=1&position=2
+# ?department=1&job=2

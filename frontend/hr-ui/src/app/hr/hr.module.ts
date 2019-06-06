@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
 import { Routes, RouterModule } from '@angular/router';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
 import { ListEmployeesComponent } from './components/list-employees/list-employees.component';
 import { CoreModule } from '../core/core.module';
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AnnouncementsComponent } from './components/announcements/announcements.component';
 
 const routes: Routes = [
   {
@@ -14,6 +17,7 @@ const routes: Routes = [
     children: [
       { path: 'employees', component: ListEmployeesComponent },
       { path: 'employees/:id', component: EmployeeDetailsComponent },
+      { path: 'announcements', component: AnnouncementsComponent }
     ]
   }
 ];
@@ -22,13 +26,15 @@ const routes: Routes = [
   declarations: [
     HomeComponent,
     ListEmployeesComponent,
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
+    AnnouncementsComponent
   ],
   imports: [
     RouterModule.forChild(routes),
     CommonModule,
     CoreModule,
-    NgbModule
+    NgbModule,
+    CKEditorModule
   ]
 })
 
