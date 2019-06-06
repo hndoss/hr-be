@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row pl-6">
   <div class="col-sm-2 bg-dark">
     <div class="container-fluid">
       <ul class="nav flex-column">
@@ -9,10 +9,7 @@
           <a class="nav-link text-light" routerLink="/hr/home/announcements">Announcements</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="#">Disabled</a>
+          <a class="nav-link text-light" (click)="pdf()">Work Records</a>
         </li>
       </ul>
     </div>
@@ -24,7 +21,6 @@
   <!-- <div>
     should have:
     <ul>
-      <li>can update employee job.</li>
       <li>Enviar publicaciones internas a los correos de todos los empleados.</li>
       <li>Pagar la planilla a las cuentas de los empleados, para esto se deberá implementar un web service para la  conexión con Bancos</li>
       <li>Generar constancias de trabajo de forma automática y enviarlas por PDF al correo del empleado solicitante</li>

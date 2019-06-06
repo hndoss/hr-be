@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployeeService } from 'src/app/core/services/employee/employee.service';
 
 @Component({
   selector: 'hr-home',
@@ -7,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private employeeService : EmployeeService
+  ) { }
 
   ngOnInit() {  }
+
+  private pdf(){
+    console.log("click")
+    this.employeeService.getPDF();
+  }
 
 }

@@ -102,4 +102,7 @@ export class EmployeeDetailsComponent implements OnInit {
     this.needUpdate = true;
   }
 
+  private sendWorkRecord(){
+    
+  }
 }

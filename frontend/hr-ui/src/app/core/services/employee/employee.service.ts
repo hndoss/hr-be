@@ -57,4 +57,24 @@ export class EmployeeService {
         error => { console.log("Error", error); }
       );
   }
+
+  public getPDF() {
+    console.log("in the service")
+    console.log(`${environment.apiUrl}hr/work_record`)
+    return this.http.get<any>(`${environment.apiUrl}hr/work_record`);
+      // .pipe(
+      //   map(res => {
+      //     let employees: UserProfile[] = [];
+      //     res.forEach(object => {
+      //       let user = new User(object.user.id, object.user.username,
+      //         object.user.first_name, object.user.last_name, object.user.email);
+
+      //       employees.push(new UserProfile(object.id, object.job, object.department, object.salary, user))
+      //     });
+      //     return employees;
+      //   })
+      // );
+    // http://127.0.0.1:8000/hr/work_record/
+  }
+
 }
