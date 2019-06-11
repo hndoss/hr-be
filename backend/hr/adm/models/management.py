@@ -5,7 +5,5 @@ class Management(models.Model):
     name = models.CharField(max_length=60)
     description = models.CharField(max_length=120)
 
-    objects = models.Manager()
-
     def __str__(self):
         return self.name

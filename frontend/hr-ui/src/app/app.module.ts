@@ -3,11 +3,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { TokenInterceptor } from './core/services/auth/token.interceptor';
-
+import { DlDateTimeDateModule, DlDateTimePickerModule } from 'angular-bootstrap-datetimepicker';
 import { PageNotFoundComponent } from './site/components/page-not-found/page-not-found.component';
 import { AuthGuardService } from './core/services/auth/auth-guard.service';
 import { JwtModule } from '@auth0/angular-jwt';
@@ -26,6 +26,14 @@ const routes: Routes = [
       roles: ['hr']
     }
   },
+  {
+    path: 'me',
+    loadChildren: './employee/employee.module#EmployeeModule',
+    canActivate: [AuthGuardService],
+    data: {
+      roles: ['public']
+    }
+  },
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -39,6 +47,7 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes),
     NgbModule,
+    FormsModule,
     BrowserModule,
     JwtModule.forRoot({
       config: {
@@ -47,7 +56,9 @@ const routes: Routes = [
         blacklistedRoutes: ['localhost:4200/login/']
       }
     }),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DlDateTimeDateModule,
+    DlDateTimePickerModule
   ],
 
   providers: [

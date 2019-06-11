@@ -29,11 +29,8 @@ pip install djangorestframework
 - [ ] Pagar la planilla a las cuentas de los empleados, para esto se deberá implementar un web service para la  conexión con Bancos
 - [ ] Generar constancias de trabajo de forma automática y enviarlas por PDF al correo del empleado solicitante.
 - [ ] Generar boletas de pago y entregarlas de forma dinámica a cada uno de los correos de los empleados
-- [ ] Aprobar/Denegar vacaciones de algún empleado de la  empresa
-- [ ] Aprobar/Denegar algún permiso de alguno de los empleados de la empresa
-- [ ] Aprobar/Denegar alguna inasistencia de algún empleado
-- [ ] Monitoreo de llegadas tarde o salidas temprano del personal
-- [ ] Autorizar permisos, insistencias o vacaciones de algún empleado y previamente autorizadas por los jefes y gerentes correspondientes.
+- [ ] Approve/Deny vacation/permission/no attendance request of a worker previously approved.
+- [ ] Monitoreo de llegadas tarde o salidas temprano del personal.
 - [ ] Monitorear en una aplicación Móvil y a través de un Mapa la ubicación física de la casa de cada uno de los empleados de la empresa.
 - [ ] Sortear premios entre empleados, como boletos, cupones etc, se deberá crear un módulo para poder crear sorteos y publicar ganadores.
 
@@ -72,3 +69,9 @@ pip install djangorestframework
 - [ ] En este sistema deberá existir directorios de archivos compartidos por Área, donde solo los miembros de una misma área podrán manipular los archivos que ellos compartan entre si, en su respectiva carpeta.
 
 - [ ] En este sistema también empleado podrá contar una Agenda y Calendario: Deberá existir un calendario donde se puedan realizar dos tipos de actividades: eventos y tareas, de ambas se conoce la fecha, el título y el recordatorio (cantidad de minutos antes que el usuario desee que se le recuerde sobre la actividad), pero por aparte de la tarea se conoce el contenido de la tarea y las “notas” o anotaciones del usuario y del evento se conoce la hora de inicio y hora de finalización. Mientras el sistema esté abierto, deberá mostrar una alarma según si el usuario seleccionó que lo deseaba o no y con el tiempo de anticipación especificado.
+
+## Users
+admin:admin: asd.123
+hruser: 8V1kDutwBaRGVu7yCj6G
+manager: Akr9V2rmlETO7Pqm0qDy
+normaluser: UJLX83Noyy43wCluUw3Y

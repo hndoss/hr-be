@@ -13,8 +13,8 @@ export class AuthService {
     private http: HttpClient,
     private jwtHelper: JwtHelperService) { }
 
-  private getUser() {
-    return this.jwtHelper.decodeToken(localStorage.getItem('token'))
+  public getUser() {
+    return this.jwtHelper.decodeToken(this.getToken());
   }
 
   public getToken() {

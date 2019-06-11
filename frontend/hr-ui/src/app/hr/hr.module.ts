@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
 import { Routes, RouterModule } from '@angular/router';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { CoreModule } from '../core/core.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ListEmployeesComponent } from './components/list-employees/list-employees.component';
-import { CoreModule } from '../core/core.module';
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AnnouncementsComponent } from './components/announcements/announcements.component';
 
 const routes: Routes = [
