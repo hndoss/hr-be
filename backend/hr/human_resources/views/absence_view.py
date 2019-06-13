@@ -9,7 +9,8 @@ from ..models import Absence
 class AbsenceView(viewsets.ModelViewSet):
     serializer_class = AbsenceSerializer
     queryset = Absence.objects.all()
-    allowed_groups = ['public', ]
+    filter_fields = ('requester',)
+    allowed_groups = ['public']
 
     def post(self, request, format=None):
         serializer = AbsenceSerializer(data=request.data)

@@ -1,31 +1,48 @@
-<!-- <core-entity-details>
-</core-entity-details> -->
-<div *ngIf="employee">
+<div class="container" *ngIf="employee">
     <h1>Username: {{employee.username}}</h1>
 
-    <div class="btn-group" ngbDropdown role="group">
+    <div class="row mt-3 ">
+        <div class="btn-group col" ngbDropdown role="group">
+            <div class="col-5">
+                <h3>Department:</h3>
+            </div>
 
-        <h3>Department:</h3>
-        <button class="btn btn-outline-primary ml-3" ngbDropdownToggle>{{getEmployeeDepartmentName()}}</button>
-        <div class="dropdown-menu" ngbDropdownMenu>
-            <span *ngFor="let department of departments">
-                <button ngbDropdownItem (click)="updateSelectedDepartment(department)">{{ department.name }}</button>
-            </span>
+            <div>
+                <button class="btn btn-outline-primary ml-3" ngbDropdownToggle>{{getEmployeeDepartmentName()}}</button>
+                <div class="dropdown-menu" ngbDropdownMenu>
+                    <span *ngFor="let department of departments">
+                        <button ngbDropdownItem
+                            (click)="updateSelectedDepartment(department)">{{ department.name }}</button>
+                    </span>
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <div class="btn-group" ngbDropdown role="group">
+    <div class="row mt-3 ">
+        <div class="btn-group col" ngbDropdown role="group">
 
-        <h3>Job:</h3>
-        <button class="btn btn-outline-primary ml-3" ngbDropdownToggle>{{getEmployeeJobName()}}</button>
-        <div class="dropdown-menu" ngbDropdownMenu>
-            <span *ngFor="let job of jobs">
-                <button ngbDropdownItem (click)="updateSelectedJob(job)">{{ job.name }}</button>
-            </span>
+            <div class="col-5">
+                <h3>Job:</h3>
+            </div>
+
+            <div>
+                <button class="btn btn-outline-primary ml-3" ngbDropdownToggle>{{getEmployeeJobName()}}</button>
+                <div class="dropdown-menu" ngbDropdownMenu>
+                    <span *ngFor="let job of jobs">
+                        <button ngbDropdownItem (click)="updateSelectedJob(job)">{{ job.name }}</button>
+                    </span>
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <button *ngIf="needUpdate" (click)="saveChanges()">Save</button>
+
+    <div class="row mt-5 ">
+        <button class="btn btn-primary float-right" [disabled]="!needUpdate" (click)="saveChanges()">Save</button>
+    </div>
 
     <!-- <button (click)="sendWorkRecord()">Send Work Record</button> -->
 </div>

@@ -1,0 +1,17 @@
+<p>
+  change-employee-salary works!
+</p>
+
+<a>Change employee salary</a>
+
+should list all the employees of his department
+
+<core-list-entities 
+  *ngIf="title" 
+  [title]="title"
+  [subtitle]="subtitle"
+  [entities]="employees"
+  [properties]="properties"
+  (callForUpdate)="editEmployeeSalary($event)"
+>
+</core-list-entities>

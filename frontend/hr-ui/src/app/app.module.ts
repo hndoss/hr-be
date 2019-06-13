@@ -27,6 +27,14 @@ const routes: Routes = [
     }
   },
   {
+    path: 'manager',
+    loadChildren: './manager/manager.module#ManagerModule',
+    canActivate: [AuthGuardService],
+    data: {
+      roles: ['manager']
+    }
+  },
+  {
     path: 'me',
     loadChildren: './employee/employee.module#EmployeeModule',
     canActivate: [AuthGuardService],

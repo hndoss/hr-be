@@ -1,23 +1,35 @@
-<p>
-  request-absence works!
-</p>
-
-<div class="btn-group" ngbDropdown role="group">
-  <h3>Type:</h3>
-  <button class="btn btn-outline-primary ml-3" ngbDropdownToggle>{{absenceType}}</button>
-  <div class="dropdown-menu" ngbDropdownMenu>
-    <button ngbDropdownItem (click)="setAbsenceType('Vacation')">Vacation</button>
-    <button ngbDropdownItem (click)="setAbsenceType('Permission')">Permission</button>
-    <button ngbDropdownItem (click)="setAbsenceType('Absence')">Absence</button>
+<div class="row">
+  <div class="btn-group" ngbDropdown role="group">
+    <h3>Type:</h3>
+    <button class="btn btn-outline-primary ml-3" ngbDropdownToggle>{{absenceType}}</button>
+    <div class="dropdown-menu" ngbDropdownMenu>
+      <button ngbDropdownItem (click)="setAbsenceType('Vacation')">Vacation</button>
+      <button ngbDropdownItem (click)="setAbsenceType('Permission')">Permission</button>
+      <button ngbDropdownItem (click)="setAbsenceType('Absence')">Absence</button>
+    </div>
   </div>
 </div>
 
-<dl-date-time-picker startView="day" maxView="year" minView="minute" minuteStep="5" [(ngModel)]="startAbsence">
-</dl-date-time-picker>
+<div class="row">
+  <div class="mt-5 col p-3">
+    <h3 class="center-text">From</h3>
+    <dl-date-time-picker startView="day" maxView="year" minView="minute" minuteStep="5" [(ngModel)]="startAbsence">
+    </dl-date-time-picker>
+  </div>
 
-<dl-date-time-picker startView="day" maxView="year" minView="minute" minuteStep="5" [(ngModel)]="finishAbsence">
-</dl-date-time-picker>
+  <div class="mt-5 col p-3">
+    <h3 class="center-text">To</h3>
+    <dl-date-time-picker startView="day" maxView="year" minView="minute" minuteStep="5" [(ngModel)]="finishAbsence">
+    </dl-date-time-picker>
+  </div>
+</div>
 
-Range: {{startAbsence}}~{{finishAbsence}}
+<div class="row mt-3">
+  From: {{startAbsence}}
+  <br>
+  To: {{finishAbsence}}
+</div>
 
-<button (click)="submitAbsenceRequest()">Submit</button>
+<div class="row mt-4">
+  <button class="btn btn-primary" (click)="submitAbsenceRequest()">Submit</button>
+</div>

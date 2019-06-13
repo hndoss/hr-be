@@ -1,11 +1,35 @@
 <h1> {{ title }}</h1>
 
-<div class="list-group" *ngFor="let entity of entities">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">{{ entity[subtitle] }}</h5>
-      <span *ngFor="let property of properties">
-        {{property.name}}: {{entity[property.value]}}
-      </span>
+
+<div class="container border">
+  <div class="row headers">
+    <div class="col border" *ngFor="let property of properties">
+      {{property.name}}
+    </div>
+    <div class="col">
+      Action
+    </div>
+  </div>
+
+  <div class="row" *ngFor="let entity of entities">
+    <div class="col border" *ngFor="let property of properties">
+      {{entity[property.value]}}
+    </div>
+    <div class="col border">
       <button class="btn btn-outline-dark" (click)="clickOnEntity(entity)">Details</button>
     </div>
-</div> 
+
+  </div>
+</div>
+
+
+
+<!-- <div class="row" *ngFor="let entity of entities">
+  <div class="d-flex w-100 justify-content-between">
+    <h5 class="mb-1">{{ entity[subtitle] }}</h5>
+    <div *ngFor="let property of properties">
+      {{property.name}}: {{entity[property.value]}}
+    </div>
+    <button class="btn btn-outline-dark" (click)="clickOnEntity(entity)">Details</button>
+  </div>
+</div> -->
