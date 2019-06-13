@@ -4,4 +4,4 @@ COPY requirements.txt /srv/hr
 RUN pip install -r requirements.txt
 COPY . /srv
 
-ENTRYPOINT ['python', 'manage.py', 'runserver']
+ENTRYPOINT ["python", "manage.py", "runserver", "0.0.0.0:8000"]
