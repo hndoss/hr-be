@@ -10,7 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
-import os, datetime
+import os
+import datetime
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,7 +25,8 @@ SECRET_KEY = ')!z+cst@#^7oz2pno@y0(q%=0)mez9+c0r3)8*)-w!4%ixyf_j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 ALLOWED_HOSTS = ['*']
 
 
@@ -43,6 +45,7 @@ INSTALLED_APPS = [
     'adm',
     'authenticator',
     'human_resources',
+    'import_export'
 ]
 
 MIDDLEWARE = [
@@ -124,11 +127,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
+CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_ORIGIN_WHITELIST = (
-    'localhost:4200/'
-)
+STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
     # inside the Rest framework settings dictionary, add the auth settings
@@ -136,12 +137,12 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication'
     ],
-    
+
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
         'rest_framework.permissions.IsAuthenticated',
         'authenticator.permissions.BasePermission'
-    ],      
+    ],
     'DEFAULT_FILTER_BACKENDS': [
         'rest_framework.filters.SearchFilter',
         'django_filters.rest_framework.DjangoFilterBackend'

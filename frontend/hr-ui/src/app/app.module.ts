@@ -11,6 +11,12 @@ import { DlDateTimeDateModule, DlDateTimePickerModule } from 'angular-bootstrap-
 import { PageNotFoundComponent } from './site/components/page-not-found/page-not-found.component';
 import { AuthGuardService } from './core/services/auth/auth-guard.service';
 import { JwtModule } from '@auth0/angular-jwt';
+import { FusionChartsModule } from 'angular-fusioncharts';
+import * as FusionCharts from 'fusioncharts';
+import * as Charts from 'fusioncharts/fusioncharts.charts';
+import { CanActivate } from '@angular/router/src/utils/preactivation';
+
+FusionChartsModule.fcRoot(FusionCharts, Charts)
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -18,6 +24,14 @@ export function tokenGetter() {
 
 const routes: Routes = [
   { path: '', loadChildren: './site/site.module#SiteModule' },
+  { 
+    path: 'admin', 
+    loadChildren: './admin/admin.module#AdminModule',
+    canActivate: [AuthGuardService],
+    data: {
+      roles: ['admin']
+    }
+  },
   {
     path: 'hr',
     loadChildren: './hr/hr.module#HrModule',
@@ -66,7 +80,8 @@ const routes: Routes = [
     }),
     ReactiveFormsModule,
     DlDateTimeDateModule,
-    DlDateTimePickerModule
+    DlDateTimePickerModule,
+    FusionChartsModule
   ],
 
   providers: [

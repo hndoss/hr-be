@@ -1,5 +1,5 @@
 <div class="sidenav" *ngIf="authService.isAuthenticated()">
-  <!-- <a href="http://localhost:8000/">Admin</a> -->
+  <a routerLink="/admin/home">Admin</a>
   <a routerLink="/hr/home">Human Resources</a>
   <a routerLink="/manager/home">Manager</a>
   <a routerLink="#chief">Chief</a>
@@ -11,8 +11,10 @@
 </div>
 
 <div class="main">
-  <div>
+  <div class="row">
     <router-outlet></router-outlet>
+  </div>
+  <div class="row fixed-row-bottom" *ngIf="authService.isAuthenticated()">
     <site-chat></site-chat>
   </div>
 </div>

@@ -1,5 +1,6 @@
 from rest_framework import routers
 from human_resources import views
+from django.urls import path, include
 
 app_name = 'human_resources'
 
@@ -8,6 +9,8 @@ router.register(r'^users', views.UserProfileView)
 router.register(r'^departments', views.DepartmentView)
 router.register(r'^jobs', views.JobView)
 router.register(r'^absences', views.AbsenceView)
-# router.register(r'^work_record', views.WorkRecordView, base_name='WorkRecord')
 
-urlpatterns = router.urls
+urlpatterns = [
+    path("xml", views.XmlView.as_view()),
+    path("", include(router.urls))
+]

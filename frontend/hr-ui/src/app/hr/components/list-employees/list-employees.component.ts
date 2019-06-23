@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeeService } from 'src/app/core/services/employee/employee.service';
 import { UserProfile } from 'src/app/core/models/userprofile/userprofile';
-import { User } from 'src/app/core/models/user/user';
 
 @Component({
   selector: 'hr-list-employees',
@@ -20,7 +19,6 @@ export class ListEmployeesComponent implements OnInit {
 
   constructor(
     private employeeService: EmployeeService,
-    private route: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit() {
@@ -39,5 +37,5 @@ export class ListEmployeesComponent implements OnInit {
     console.log("Updating " + entity + " and triggering modal ");
     this.router.navigate([`${this.router.url}/${entity.id}`]);
   }
-  
+
 }

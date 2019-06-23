@@ -18,7 +18,7 @@ export class DepartmentService {
     return this.http.get<any>(this.apiUrl)
       .pipe(
         map(res => {
-          let departments : Department[] = [];
+          let departments: Department[] = [];
           res.forEach(object => {
             departments.push(new Department(object.id, object.name, object.description))
           });
@@ -33,6 +33,15 @@ export class DepartmentService {
         map(res => {
           let department = new Department(res.id, res.name, res.description);
           return department;
+        })
+      );
+  }
+
+  public getEmployeesPerDepartment(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/count_employees`)
+      .pipe(
+        map(res => {
+          return res;
         })
       );
   }
